@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <script src="ml5.min.js"></script>
+    <script src="webcam.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+      <h3 class="text-center">Leer la predicción</h3>
+     <p style="color:black;"><b>Descripción : </b> Usa la síntesis de voz para leer el resultado de la predicción
+    </p><ol style="color:black;text-align:left;">
+      <li> Definir una variable para almacenar la API de voz</li> 
+      <li>Almacena la etiqueta del resultado de la predicción que queremos que el sistema hable en una variable</li>
+      <li>Usa la función SpeechSynthesisUtterance()para convertir el texto en voz, pasa la variable que mantiene el resultado de la predicción a SpeechSynthesisUtterance() como parámetro y almacénalo en una variable</li>
+      <li>Después usa la función speak() y pasa la variable que sostiene el texto a los datos de discurso convertidos a la función speak()</li>
+      <li>Escribe todo el código anterior dentro de la función gotResult() en sketch.js</li>
+      <li>Para referencia - Para recordar la API de voz, consulta el código JS de la clase 100 (aplicación Toma mi selfie)</li>
+    </ol><p></p>
+    <p class="btn btn-info">El modelo está preparado para identificar estos objetos: <span class="btn ">Reloj</span> <span class="btn">Cuchara</span> <span class="btn">Teléfono</span> <span class="btn ">Botella de agua</span></p>
+
+   
+  <div class="container">
+   
+   <div class="row">
+        <div class="col-md-6">
+            <label> Vista previa en vivo de la cámara web  </label>
+            <div id="camera"></div>
+            <br>
+            <button onclick="take_snapshot();" class="btn  btn-info w-50">Capturar imagen</button>
+        </div>
+        <div class="col-md-6">
+            <label>Tu imagen instantánea  </label>
+            <div id="result"></div>
+            <br>
+            <button onclick="check();" class="btn  btn-info w-50">Identificar imagen</button>
+        </div>
+   </div>
+   <div>
+    <br>
+   
+    
+    <p>Objeto : <span id="result_object_name"></span> </p>
+    <p>Precisión : <span id="result_object_accuracy"></span> </p>
+   </div>
+  </div>
+    <script src="sketch.js"></script>
+  
+
+</body></html>
